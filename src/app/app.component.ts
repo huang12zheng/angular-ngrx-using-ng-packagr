@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,4 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 export class AppComponent {
   title = 'app';
 }
-export const getProductState = createFeatureSelector<any>('products');
+export const getProductState: MemoizedSelector<any, any> = createFeatureSelector<any>('products');
